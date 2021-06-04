@@ -1,0 +1,61 @@
+.
+~foo\~
+.
+<p>~foo~</p>
+.
+
+.
+~foo bar~
+.
+<p>~foo bar~</p>
+.
+
+.
+_foo\ bar\ baz_
+.
+<p><em>foo bar baz</em></p>
+.
+
+.
+*foo\ bar\ baz*
+.
+<p><strong>foo bar baz</strong></p>
+.
+
+.
+~foo\ bar\ baz~
+.
+<p><strike>foo bar baz</strike></p>
+.
+
+.
+~\ foo\ ~
+.
+<p><strike> foo </strike></p>
+.
+
+.
+~foo\\\\\\\ bar~
+.
+<p><strike>foo\\\ bar</strike></p>
+.
+
+.
+~foo\\\\\\ bar~
+.
+<p>~foo\\\ bar~</p>
+.
+
+.
+*~foo~\ bar*
+.
+<p><strong>~foo~ bar</strong></p>
+.
+
+
+coverage
+.
+*~f
+.
+<p>*~f</p>
+.

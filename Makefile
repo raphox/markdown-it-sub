@@ -7,7 +7,7 @@ REMOTE_NAME ?= origin
 REMOTE_REPO ?= $(shell git config --get remote.${REMOTE_NAME}.url)
 
 CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut -b -6) master)
-GITHUB_PROJ := https://github.com//markdown-it/${NPM_PACKAGE}
+GITHUB_PROJ := https://github.com/raphox/${NPM_PACKAGE}
 
 
 lint:
@@ -27,13 +27,13 @@ browserify:
 	rm -rf ./dist
 	mkdir dist
 	# Browserify
-	( printf "/*! ${NPM_PACKAGE} ${NPM_VERSION} ${GITHUB_PROJ} @license MIT */" ; \
-		./node_modules/.bin/browserify ./ -s markdownitSub \
-		) > dist/markdown-it-sub.js
+	( printf "/**! ${NPM_PACKAGE} ${NPM_VERSION} ${GITHUB_PROJ} @license MIT **/\n" ; \
+		./node_modules/.bin/browserify ./ -s markdownitWhatsapp \
+		) > dist/markdown-it-whatsapp.js
 	# Minify
-	./node_modules/.bin/uglifyjs dist/markdown-it-sub.js -b beautify=false,ascii-only=true -c -m \
-		--preamble "/*! ${NPM_PACKAGE} ${NPM_VERSION} ${GITHUB_PROJ} @license MIT */" \
-		> dist/markdown-it-sub.min.js
+	./node_modules/.bin/uglifyjs dist/markdown-it-whatsapp.js -b beautify=false -c -m \
+	    --comments '/^\**!|@preserve|@license|@cc_on/i' \
+		> dist/markdown-it-whatsapp.min.js
 
 .PHONY: lint test coverage
 .SILENT: lint test

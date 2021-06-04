@@ -1,14 +1,13 @@
 {
-  "name": "markdown-it-sub",
-  "main": "dist/markdown-it-sub.js",
-  "homepage": "https://github.com/markdown-it/markdown-it-sub",
-  "description": "<sub> tag for markdown-it markdown parser.",
+  "name": "markdown-it-whatsapp",
+  "main": "dist/markdown-it-whatsapp.js",
+  "homepage": "https://github.com/raphox/markdown-it-whatsapp",
+  "description": "<em>, <strong>, <strike> tags for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
     "markdown",
-    "subscript",
-    "sub"
+    "whatsapp"
   ],
   "license": "MIT",
   "ignore": [
